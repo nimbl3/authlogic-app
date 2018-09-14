@@ -103,8 +103,10 @@ def handle_unverified_request
   end
   redirect_to root_url
 end
-
 ```
+
+This is because Authlogic introduces its own methods for storing user sessions,
+the CSRF (Cross Site Request Forgery) protection that is built into Rails will not work out of the box.
 
 6. Add the `UserSessionsController`
 ```ruby
